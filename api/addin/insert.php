@@ -122,7 +122,7 @@
 
     if (!$record) {
         $code=-1;
-        $desc="record insert failed!".$sql;
+        $desc="record insert failed!";//.$sql;
     } else {
         $code=1;
         $desc="success";
