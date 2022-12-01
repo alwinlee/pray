@@ -79,6 +79,7 @@ if ($currM==1&&$currD<=30){
     <div id="wrapper">
         <!-- Navigation -->
         <?php include("menu.php"); ?>
+        <input type='hidden' id='checkin-year' class='checkin-year' name='checkin-year' value='' />
         <input type='hidden' id='previous-keyword' class='previous-keyword' name='previous-keyword' value='' />
         <input type='hidden' id='auto-checkin-idx' class='auto-checkin-idx' name='auto-checkin-idx' value=0 />
         <?php

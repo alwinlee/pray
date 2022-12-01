@@ -1,4 +1,12 @@
 ﻿$(document).ready(function() {
+    // key checkin year
+    var date = new Date();
+    var year = date.getFullYear() + '';
+    if (date.getMonth() >= 10) {
+        year = (date.getFullYear() + 1) + '';
+    }
+    $('#checkin-year').val(year);
+
     // init value of auto checkin
     var autocheckin = localStorage.getItem("prayautocheckin");
     if (autocheckin=="yes"){
@@ -14,7 +22,7 @@
     });
 
     $("#keyword").on('input',function() {
-        if(isCPBarcode()==false){
+        if(isBarcode()==false){
             return ;
         }
         searchMember();
@@ -54,17 +62,20 @@ function searchMember() {
         return;
     }
     $('#previous-keyword').val(keyword);
-    keyword = keyword.replace(/2O2O/g, '');
+
+    var year = $('#checkin-year').val();
+    keyword = keyword.replace(/year/g, '');
 
     pray.query.findCheckinMember(keyword, function(data){
         if(data['code']<=0){
             stud=[];showtable(stud);
         }else{
-            var bBarcode = isCPBarcode();
+            var bBarcode = isBarcode();
             if (bBarcode) {
                 var keyword = $('#keyword').val();
                 keyword = keyword.replace(/X/g, '#');
-                keyword = keyword.replace(/2O2O/g, '');
+                var year = $('#checkin-year').val();
+                keyword = keyword.replace(/year/g, '');
                 $('#keyword').val(keyword);
             }
 
@@ -126,7 +137,9 @@ function isBarcode() {
     var keyword = $('#keyword').val();
     if (keyword.length < 4) { return false; }
     keyword = keyword.substr(0, 4);
-    return ((keyword == '2O2O') ? true : false);
+
+    var year = $('#checkin-year').val();
+    return ((keyword == year) ? true : false);
 }
 
 function hideModal() {
