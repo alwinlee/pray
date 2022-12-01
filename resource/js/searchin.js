@@ -469,7 +469,7 @@ function checkinputdata() {
     }
 
     if (phoneFormat(tel)==false){
-        $('#confirm-data-information').html("電話格式錯誤： <br>範例 : 0911222333 或 079876543 或 079876543#123");
+        $('#confirm-data-information').html("電話格式錯誤： <br>範例 : 0911222333 或 079876543");
         $('#confirm-data').modal('show');
         //setTimeout(hideConfirmDataModal, 3000);
         return false;
@@ -484,7 +484,7 @@ function phoneFormat(strPhone)
     var nFirstZeroPos=-1;
     var nExtPos=-1;
 
-    var strValid="0123456789#";
+    var strValid="0123456789"; // "0123456789#";
     var bVaildNumber=true;
     for (i=0;i<strPhone.length;i++)
     {

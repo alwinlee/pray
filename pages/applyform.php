@@ -11,7 +11,7 @@ require_once("../api/lib/params.php");
     </div>
     <div class="input-group  has-error">
         <span class="input-group-addon" id="basic-lbltel">電　　話 ： </span>
-        <input type="text" class="form-control" id="basic-tel" placeholder="範例 : 0911222333 或 079876543 或 079876543#123">
+        <input type="text" class="form-control" id="basic-tel" placeholder="範例 : 0911222333 或 079876543">
         <span class="input-group-addon" id="basic-lblsex">性　　別 ： </span>
         <select class="form-control" id="basic-sex">
           <option value='0'>-</option>
