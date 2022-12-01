@@ -7,10 +7,10 @@
       $db_username = "root";
       $db_password = "rinpoche";
     } else {
-      $db_host = "";
-      $db_table = "";
-      $db_username = "";
-      $db_password = "";
+      $db_host = "dbserver.cnqddfbecjc0.us-west-2.rds.amazonaws.com";
+      $db_table = "bwfocebmbd";
+      $db_username = "bwfocebmbd";
+      $db_password = "Candrakirti2019";
     }
 
     if (!@mysql_connect($db_host, $db_username, $db_password)) {
