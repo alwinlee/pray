@@ -9,6 +9,7 @@
     header("Content-type: application/json; charset=utf-8");
     require_once("../lib/connmysql.php");
     require_once("../lib/common.php");
+    require_once("../lib/params.php");
     ini_set("error_reporting",0);
     ini_set("display_errors","Off"); // On : open, O
 
@@ -36,11 +37,11 @@
     $groupkey=$data['data']['groupkey'];
 
     //查詢登入會員資料
-    $groupFilterAry=array("大會","教育大組","庶務大組","總務大組","福田大組","廣供大組","餐飲大組","交通大組","多媒體影音","法務組","海外組","護戒組","師長飲食","觀音亭專區","光明燈專案");
+    // $groupFilterAry=array("大會","教育大組","庶務大組","總務大組","福田大組","廣供大組","餐飲大組","交通大組","多媒體影音","法務組","海外組","護戒組","師長飲食","觀音亭專區","光明燈專案");
     if ($groupkey=="*"){
         $sql="select * from `".$tbname."` where `invalidate`<=0 order by `group`,`subgroup`,`type` limit ".$start.",".($length);
     }else{
-        $sql="select * from `".$tbname."` where (`group`='".$groupFilterAry[$groupkey]."' and `invalidate`<=0 ) order by `group`,`subgroup`,`type` limit ".$start.",".($length);
+        $sql="select * from `".$tbname."` where (`group`='".$params_maingroups[$groupkey - 1]."' and `invalidate`<=0 ) order by `group`,`subgroup`,`type` limit ".$start.",".($length);
     }
 
     $record=mysql_query($sql);

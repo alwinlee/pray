@@ -100,21 +100,11 @@
                                       $livelist="義工名冊(住宿用-總表)";
                                       $grouplist="義工名冊(分組)";
                                   }
-                                  else if ($groupkey=="1"){ $list="義工名冊(教育大組)";}
-                                  else if ($groupkey=="2"){ $list="義工名冊(庶務大組)";}
-                                  else if ($groupkey=="3"){ $list="義工名冊(總務大組)";}
-                                  else if ($groupkey=="4"){ $list="義工名冊(福田大組)";}
-                                  else if ($groupkey=="5"){ $list="義工名冊(廣供大組)";}
-                                  else if ($groupkey=="6"){ $list="義工名冊(餐飲大組)";}
-                                  else if ($groupkey=="7"){ $list="義工名冊(交通大組)";}
-                                  else if ($groupkey=="8"){ $list="義工名冊(多媒體影音)";}
-                                  else if ($groupkey=="9"){ $list="義工名冊(法務組)";}
-                                  else if ($groupkey=="A"){ $list="義工名冊(海外組)";}
-                                  else if ($groupkey=="B"){ $list="義工名冊(護戒組)";}
-                                  else if ($groupkey=="C"){ $list="義工名冊(師長飲食)";}
-                                  else if ($groupkey=="D"){ $list="義工名冊(觀音亭專區)";}
-                                  else if ($groupkey=="E"){ $list="義工名冊(光明燈專案)";}
-                                  else if ($groupkey=="X"){ $list="義工名冊(大會)";}
+                                  else if ($groupkey=="1"){ $list="義工名冊(".$params_maingroups[$groupkey-1].")";}
+                                  else if ($groupkey=="2"){ $list="義工名冊(".$params_maingroups[$groupkey-1].")";}
+                                  else if ($groupkey=="3"){ $list="義工名冊(".$params_maingroups[$groupkey-1].")";}
+                                  else if ($groupkey=="4"){ $list="義工名冊(".$params_maingroups[$groupkey-1].")";}
+                                  else if ($groupkey=="5"){ $list="義工名冊(".$params_maingroups[$groupkey-1].")";}
                                   if ($list!=""){
                                       if ($groupkey=="*"){
                                           echo '<option value=0>'.$list.'</option>';
