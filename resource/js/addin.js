@@ -237,7 +237,7 @@ function inputdata(dup) {
     name=$('#basic-name').val();
     tel=$('#basic-tel').val();
     sex=$('#basic-sex').val();
-    age=parseInt($('#basic-age').val()); //年齡
+    age=parseInt($('#basic-age').val() || 0); //年齡
     area=$('#basic-area').val();
     classarea=$('#basic-classarea').val();
 
@@ -285,7 +285,7 @@ function inputdata(dup) {
     livewhere="";
     liveroom="";
     type=$('#basic-type option:selected').val();//.text();//$('#basic-type').val();
-    notify=$('#basic-nofity').val();
+    notify=$('#basic-nofity').val() || 0;
     specialcase=$('#basic-specialcase').val();
     request=$('#basic-request').val();
     trafficgo=$('#basic-trafficgo').val();

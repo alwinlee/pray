@@ -183,8 +183,8 @@ if ($currM==1&&$currD<=30){
     <script src="../resource/js/jquery-2.1.4.min.js"></script><!-- jQuery -->
     <script src="../resource/js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
     <script src="../resource/js/metisMenu.min.js"></script><!-- Metis Menu Plugin JavaScript -->
-    <script src="../resource/js/api.js?{8786E3AE-8116-4EA3-81D7-57439DC031F1}"></script>
-    <script src="../resource/js/checkin.js?{8786E3AE-8116-4EA3-81D7-57439DC031F1}" type="text/javascript" charset="utf-8"></script>
+    <script src="../resource/js/api.js?{6EA63D78-6795-4888-AC83-170B66D98842}"></script>
+    <script src="../resource/js/checkin.js?{6EA63D78-6795-4888-AC83-170B66D98842}" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>

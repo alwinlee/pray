@@ -61,27 +61,28 @@ require_once("../api/lib/params.php");
         echo '<span class="input-group-addon" id="basic-lblgroup">參加日期 ： </span>';
         echo '<div class="input-group-btn" style="width:24%">';
         echo '    <input type="text" style="text-align: center;" class="form-control" id="basic-d1" value="'.$praydays[0].'" readonly>';
-        echo '    <input type="checkbox" class="form-control sx-checkbox" id="basic-join1" checked>';
+        echo '    <input type="checkbox" class="form-control sx-checkbox" id="basic-join1" '.($praydays[0] ? 'checked>' : 'unchecked disabled>');
         echo '    <input type="text" style="text-align: center;" class="form-control" id="basic-d5" value="'.$praydays[4].'" readonly>';
-        echo '    <input type="checkbox" class="form-control sx-checkbox" id="basic-join5" checked>';
+        echo '    <input type="checkbox" class="form-control sx-checkbox" id="basic-join5" '.($praydays[4] ? 'checked>' : 'unchecked disabled>');
         echo '</div>';
         echo '<div class="input-group-btn" style="width:24%;">';
         echo '    <input type="text" style="text-align: center;" class="form-control" id="basic-d2" value="'.$praydays[1].'" readonly>';
-        echo '    <input type="checkbox" class="form-control sx-checkbox" id="basic-join2" checked>';
+        echo '    <input type="checkbox" class="form-control sx-checkbox" id="basic-join2" '.($praydays[1] ? 'checked>' : 'unchecked disabled>');
         echo '    <input type="text" style="text-align: center;" class="form-control" id="basic-d6" value="'.$praydays[5].'" readonly>';
-        echo '    <input type="checkbox" class="form-control sx-checkbox" id="basic-join6" checked>';
+        echo '    <input type="checkbox" class="form-control sx-checkbox" id="basic-join6" '.($praydays[5] ? 'checked>' : 'unchecked disabled>');
         echo '</div>';
         echo '<div class="input-group-btn" style="width:24%">';
         echo '    <input type="text" style="text-align: center;" class="form-control" id="basic-d3" value="'.$praydays[2].'" readonly>';
-        echo '    <input type="checkbox" class="form-control sx-checkbox" id="basic-join3" checked>';
+        echo '    <input type="checkbox" class="form-control sx-checkbox" id="basic-join3" '.($praydays[2] ? 'checked>' : 'unchecked disabled>');
         echo '    <input type="text" style="text-align: center;" class="form-control" id="basic-d7" value="'.$praydays[6].'" readonly>';
-        echo '    <input type="checkbox" class="form-control sx-checkbox" id="basic-join7" checked>';
+        echo '    <input type="checkbox" class="form-control sx-checkbox" id="basic-join7" '.($praydays[6] ? 'checked>' : 'unchecked disabled>');
         echo '</div>';
         echo '<div class="input-group-btn" style="width:24%">';
         echo '    <input type="text" style="text-align: center;" class="form-control" id="basic-d4" value="'.$praydays[3].'" readonly>';
-        echo '    <input type="checkbox" class="form-control sx-checkbox" id="basic-join4" checked>';
+        echo '    <input type="checkbox" class="form-control sx-checkbox" id="basic-join4" '.($praydays[3] ? 'checked>' : 'unchecked disabled>');
+
         echo '    <input type="text" style="text-align: center;" class="form-control" id="basic-d8" value="'.$praydays[7].'" readonly>';
-        echo '    <input type="checkbox" class="form-control sx-checkbox" id="basic-join8" checked>';
+        echo '    <input type="checkbox" class="form-control sx-checkbox" id="basic-join8" '.($praydays[7] ? 'checked>' : 'unchecked disabled>');
         echo '</div>';
       ?>
     </div>

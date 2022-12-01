@@ -14,7 +14,7 @@
     });
 
     $("#keyword").on('input',function() {
-        if(isBarcode()==false){
+        if(isCPBarcode()==false){
             return ;
         }
         searchMember();
@@ -60,7 +60,7 @@ function searchMember() {
         if(data['code']<=0){
             stud=[];showtable(stud);
         }else{
-            var bBarcode = isBarcode();
+            var bBarcode = isCPBarcode();
             if (bBarcode) {
                 var keyword = $('#keyword').val();
                 keyword = keyword.replace(/X/g, '#');
@@ -88,6 +88,22 @@ function searchMember() {
         table='<div class="alert alert-danger" role="alert">查詢失敗！</div>';
         $('#searchdata').html(table);
     });
+}
+
+function isCPBarcode() {
+
+    var keyword = $('#keyword').val();
+    if(keyword.length != 13){return false;}
+
+    var strValid="0123456789";
+    var bBarcode=true;
+    for (i=0;i<keyword.length;i++)
+    {
+        j=strValid.indexOf(keyword.charAt(i));
+        if (j<0){bBarcode=false;break;}
+        //if (i==0&&j>4){bBarcode=false;break;}
+    }
+    return bBarcode;
 }
 
 function isBarcodex() {
