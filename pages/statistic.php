@@ -100,11 +100,16 @@
                                       $livelist="義工名冊(住宿用-總表)";
                                       $grouplist="義工名冊(分組)";
                                   }
-                                  else if ($groupkey=="1"){ $list="義工名冊(".$params_maingroups[$groupkey-1].")";}
-                                  else if ($groupkey=="2"){ $list="義工名冊(".$params_maingroups[$groupkey-1].")";}
-                                  else if ($groupkey=="3"){ $list="義工名冊(".$params_maingroups[$groupkey-1].")";}
-                                  else if ($groupkey=="4"){ $list="義工名冊(".$params_maingroups[$groupkey-1].")";}
-                                  else if ($groupkey=="5"){ $list="義工名冊(".$params_maingroups[$groupkey-1].")";}
+                                  else if ($groupkey=="0"){ $list="義工名冊(".$params_maingroups[$groupkey].")";}
+                                  else if ($groupkey=="1"){ $list="義工名冊(".$params_maingroups[$groupkey].")";}
+                                  else if ($groupkey=="2"){ $list="義工名冊(".$params_maingroups[$groupkey].")";}
+                                  else if ($groupkey=="3"){ $list="義工名冊(".$params_maingroups[$groupkey].")";}
+                                  else if ($groupkey=="4"){ $list="義工名冊(".$params_maingroups[$groupkey].")";}
+                                  else if ($groupkey=="5"){ $list="義工名冊(".$params_maingroups[$groupkey].")";}
+                                  else if ($groupkey=="6"){ $list="義工名冊(".$params_maingroups[$groupkey].")";}
+                                  else if ($groupkey=="7"){ $list="義工名冊(".$params_maingroups[$groupkey].")";}
+                                  else if ($groupkey=="8"){ $list="義工名冊(".$params_maingroups[$groupkey].")";}
+                                  else if ($groupkey=="9"){ $list="義工名冊(".$params_maingroups[$groupkey].")";}
                                   if ($list!=""){
                                       if ($groupkey=="*"){
                                           echo '<option value=0>'.$list.'</option>';
