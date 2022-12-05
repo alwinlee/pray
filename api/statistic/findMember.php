@@ -41,7 +41,7 @@
     if ($groupkey=="*"){
         $sql="select * from `".$tbname."` where `invalidate`<=0 order by `group`,`subgroup`,`type` limit ".$start.",".($length);
     }else{
-        $sql="select * from `".$tbname."` where (`group`='".$params_maingroups[$groupkey - 1]."' and `invalidate`<=0 ) order by `group`,`subgroup`,`type` limit ".$start.",".($length);
+        $sql="select * from `".$tbname."` where (`group`='".$params_maingroups[$groupkey]."' and `invalidate`<=0 ) order by `group`,`subgroup`,`type` limit ".$start.",".($length);
     }
 
     $record=mysql_query($sql);

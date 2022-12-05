@@ -38,36 +38,10 @@
     $groupkey=$_POST["groupkey"];
     if ($groupkey=="*"){
         $table_title=$currY."祈願法會 義工名冊(總)";
-    }else if ($groupkey=="1"){
-        $table_title=$currY."祈願法會 義工名冊(教育大組)";$group="教育大組";
-    }else if ($groupkey=="2"){
-        $table_title=$currY."祈願法會 義工名冊(庶務大組)";$group="庶務大組";
-    }else if ($groupkey=="3"){
-        $table_title=$currY."祈願法會 義工名冊(總務大組)";$group="總務大組";
-    }else if ($groupkey=="4"){
-        $table_title=$currY."祈願法會 義工名冊(福田大組)";$group="福田大組";
-    }else if ($groupkey=="5"){
-        $table_title=$currY."祈願法會 義工名冊(廣供大組)";$group="廣供大組";
-    }else if ($groupkey=="6"){
-        $table_title=$currY."祈願法會 義工名冊(餐飲大組)";$group="餐飲大組";
-    }else if ($groupkey=="7"){
-        $table_title=$currY."祈願法會 義工名冊(交通大組)";$group="交通大組";
-    }else if ($groupkey=="8"){
-        $table_title=$currY."祈願法會 義工名冊(多媒體影音)";$group="多媒體影音";
-    }else if ($groupkey=="9"){
-        $table_title=$currY."祈願法會 義工名冊(法務組)";$group="法務組";
-    }else if ($groupkey=="10"){
-        $table_title=$currY."祈願法會 義工名冊(海外組)";$group="海外組";
-    }else if ($groupkey=="11"){
-        $table_title=$currY."祈願法會 義工名冊(護戒組)";$group="護戒組";
-    }else if ($groupkey=="12"){
-        $table_title=$currY."祈願法會 義工名冊(師長飲食)";$group="師長飲食";
-    }else if ($groupkey=="13"){
-        $table_title=$currY."祈願法會 義工名冊(觀音亭專區)";$group="觀音亭專區";
-    }else if ($groupkey=="14"){
-        $table_title=$currY."祈願法會 義工名冊(光明燈專案)";$group="光明燈專案";
+    } else {
+        $group=$params_maingroups[$groupkey];
+        $table_title=$currY."祈願法會 義工名冊(".$group.")";
     }
-
 
     //------------------------------------------------------------------------------------------------------------------------------
     // Create new PHPExcel object
@@ -91,9 +65,9 @@
     // set column title
     $xlstitle=array("序號",$sweepday."前行打掃","搭遊覽車","自行往返","義工類別","組別","大組","小組",
                     "區別","教室別","母班班別","姓名","手機或易聯絡電話","性別","男","女",
-                    "年齡","身體特殊狀況","住宿特殊希求","參與日期","03／03",
-                    "03／03住宿","03／04","03／04住宿","03／05","03／05住宿", "03／06",
-                    "03／06住宿", "03／07","03／07住宿", "03／08","03／08住宿", "03／09","03／09住宿", "03／10",
+                    "年齡","身體特殊狀況","住宿特殊希求","參與日期",
+                    $praydays[0],$praydays[1],$praydays[2],$praydays[3],$praydays[4],$praydays[5],$praydays[6],
+                    $praydays[7],$praydays[8],$praydays[9],$praydays[10],$praydays[11],$praydays[12],$praydays[13],$praydays[14],
                     "交通需求","搭車","去程","回程",
                     "已交車資","自行往返","通知單發放給","研討母班","各組組長","備註","重覆報名","報名日期","住宿房號");
 
@@ -101,7 +75,7 @@
                      15,8,12,16,16,
                      16,4,4,8,12,
                      12,
-                     4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,
+                     8,8,8,8,8,8,8,8,8,8,8,8,8,8,8, // 4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,
                      6,6,6,6,6,6,18,12,13,12);
     $startR=4;$currR=$startR;
     $startC=0;$currC=$startC;
@@ -306,22 +280,40 @@
                      ->setCellValue($col[++$c].$currR,$row["age"]>0 ? $row["age"]:"")
                      ->setCellValue($col[++$c].$currR,$row["specialcase"])
                      ->setCellValue($col[++$c].$currR,$row["request"])
-                     ->setCellValue($col[++$c].$currR,$row["join1"]>0 ? "1":"")
-                     ->setCellValue($col[++$c].$currR,$row["live1"]>0 ? "1":"")
-                     ->setCellValue($col[++$c].$currR,$row["join2"]>0 ? "1":"")
-                     ->setCellValue($col[++$c].$currR,$row["live2"]>0 ? "1":"")
-                     ->setCellValue($col[++$c].$currR,$row["join3"]>0 ? "1":"")
-                     ->setCellValue($col[++$c].$currR,$row["live3"]>0 ? "1":"")
-                     ->setCellValue($col[++$c].$currR,$row["join4"]>0 ? "1":"")
 
-                     ->setCellValue($col[++$c].$currR,$row["live4"]>0 ? "1":"")
+                     // ->setCellValue($col[++$c].$currR,$row["join1"]>0 ? "1":"")
+                     // ->setCellValue($col[++$c].$currR,$row["live1"]>0 ? "1":"")
+                     // ->setCellValue($col[++$c].$currR,$row["join2"]>0 ? "1":"")
+                     // ->setCellValue($col[++$c].$currR,$row["live2"]>0 ? "1":"")
+                     // ->setCellValue($col[++$c].$currR,$row["join3"]>0 ? "1":"")
+                     // ->setCellValue($col[++$c].$currR,$row["live3"]>0 ? "1":"")
+                     // ->setCellValue($col[++$c].$currR,$row["join4"]>0 ? "1":"")
+
+                     // ->setCellValue($col[++$c].$currR,$row["live4"]>0 ? "1":"")
+                     // ->setCellValue($col[++$c].$currR,$row["join5"]>0 ? "1":"")
+                     // ->setCellValue($col[++$c].$currR,$row["live5"]>0 ? "1":"")
+                     // ->setCellValue($col[++$c].$currR,$row["join6"]>0 ? "1":"")
+                     // ->setCellValue($col[++$c].$currR,$row["live6"]>0 ? "1":"")
+                     // ->setCellValue($col[++$c].$currR,$row["join7"]>0 ? "1":"")
+                     // ->setCellValue($col[++$c].$currR,$row["live7"]>0 ? "1":"")
+                     // ->setCellValue($col[++$c].$currR,$row["join8"]>0 ? "1":"")
+
+                     ->setCellValue($col[++$c].$currR,$row["join1"]>0 ? "1":"")
+                     ->setCellValue($col[++$c].$currR,$row["join2"]>0 ? "1":"")
+                     ->setCellValue($col[++$c].$currR,$row["join3"]>0 ? "1":"")
+                     ->setCellValue($col[++$c].$currR,$row["join4"]>0 ? "1":"")
                      ->setCellValue($col[++$c].$currR,$row["join5"]>0 ? "1":"")
-                     ->setCellValue($col[++$c].$currR,$row["live5"]>0 ? "1":"")
                      ->setCellValue($col[++$c].$currR,$row["join6"]>0 ? "1":"")
-                     ->setCellValue($col[++$c].$currR,$row["live6"]>0 ? "1":"")
                      ->setCellValue($col[++$c].$currR,$row["join7"]>0 ? "1":"")
-                     ->setCellValue($col[++$c].$currR,$row["live7"]>0 ? "1":"")
                      ->setCellValue($col[++$c].$currR,$row["join8"]>0 ? "1":"")
+                     ->setCellValue($col[++$c].$currR,$row["join9"]>0 ? "1":"")
+                     ->setCellValue($col[++$c].$currR,$row["joinx"]>0 ? "1":"")
+                     ->setCellValue($col[++$c].$currR, "")
+                     ->setCellValue($col[++$c].$currR, "")
+                     ->setCellValue($col[++$c].$currR, "")
+                     ->setCellValue($col[++$c].$currR, "")
+                     ->setCellValue($col[++$c].$currR, "")
+
 
                      ->setCellValue($col[++$c].$currR,$row["trafficgo"])
                      ->setCellValue($col[++$c].$currR,$row["trafficback"])
