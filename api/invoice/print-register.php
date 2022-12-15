@@ -84,7 +84,7 @@
     $html_line=getPDFLn();
     $spLine=getPDFSPLn();
 
-    $area_array=array("A"=>"北區", "B"=>"中區", "C"=>"雲嘉", "D"=>"園區", "E"=>"南區", "F"=>"高區", "G"=>"海外");
+    $area_array=array("A"=>"北區", "H"=>"竹區", "B"=>"中區", "C"=>"雲嘉", "D"=>"園區", "E"=>"南區", "F"=>"高區", "G"=>"海外");
     $notify_array=array(0=>"各組組長", 1=>"研討班", 2=>"各組組長");
     $sex_array=array("M"=>"男", "F"=>"女");
     $conditaion="";

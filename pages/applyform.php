@@ -22,6 +22,7 @@ require_once("../api/lib/params.php");
         <select  class="form-control" id="basic-area">
             <option value='0'>-</option>
             <option value='A'>北區</option>
+            <option value='H'>竹區</option>
             <option value='B'>中區</option>
             <option value='C'>雲嘉</option>
             <option value='D'>園區</option>

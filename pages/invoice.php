@@ -152,11 +152,13 @@
                      <select class="basic-area" id="basic-area">
                             <option value='0'>-</option>
                             <option value='A'>北區</option>
+                            <option value='H'>竹區</option>
                             <option value='B'>中區</option>
                             <option value='C'>雲嘉</option>
                             <option value='D'>園區</option>
                             <option value='E'>南區</option>
-                            <option value='F'>海外</option>
+                            <option value='F'>高區</option>
+                            <option value='G'>海外</option>
                      </select>
                      <br>
                      <label style="font-size:16px;">義工組別 ： </label>

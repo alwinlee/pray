@@ -169,11 +169,13 @@ function gettableex(data)
             table+='<td rowspan="4" class="text-center alert alert-danger" style="vertical-align: middle;">否</td>';
         }
         area="北區";
+        if(data[i]['area']=='H'){area="竹區";}
         if(data[i]['area']=='B'){area="中區";}
         else if(data[i]['area']=='C'){area="雲嘉";}
         else if(data[i]['area']=='D'){area="園區";}
         else if(data[i]['area']=='E'){area="南區";}
-        else if(data[i]['area']=='F'){area="海外";}
+        else if(data[i]['area']=='F'){area="高區";}
+        else if(data[i]['area']=='G'){area="海外";}
         part=data[i]['classroom'];
         if (part==''){
             part=data[i]['classother'];

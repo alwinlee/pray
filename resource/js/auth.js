@@ -1,4 +1,4 @@
-﻿$(document).ready(function() 
+﻿$(document).ready(function()
 {
     // 統計數據功能：錄取人數，確認參加人數，報到人數，男女學員人數，總報到率(報到人數/確認參加人數)
     $('#datagrid').hide();
@@ -29,12 +29,12 @@
                          {"sTitle": "效期","mData": "auth","aTargets": [4]},
                          {"sTitle": "刪除","mData": "save","aTargets": [5]}];
         }
-        drawDataTable(columns,type);        
-        
+        drawDataTable(columns,type);
+
     });
 });
 
-function drawDataTable(columns, type) 
+function drawDataTable(columns, type)
 {
     var oTable = $('#searchdata').html('<table id="datagrid" class="table table-striped table-bordered" cellspacing="0" width="100%"></table>').children('table').dataTable({
         "processing":true,
@@ -79,7 +79,7 @@ function retrieveData(sSource, aoData, fnCallback)
         if(aoData[i].name=="start"){start=aoData[i].value;}
         if(aoData[i].name=="length"){len=aoData[i].value;}
     }
-    
+
     var register=1;
     var url="../api/authmanage/authuser.php";
     var type=$('#exporttype').val();
@@ -107,10 +107,10 @@ function updatecell(data, type)
             check=(data[i]['auth'][0]==1)? "checked":"";
             tag='<input type=\"checkbox\" class=\"form-control mx-checkbox\" id=\"auth1_'+(i+1)+'\" '+check+' >';
             data[i]['auth1']=tag;
-            
+
             check=(data[i]['auth'][1]==1)? "checked":"";
             tag='<input type=\"checkbox\" class=\"form-control mx-checkbox\" id=\"auth2_'+(i+1)+'\" '+check+' >';
-            data[i]['auth2']=tag;           
+            data[i]['auth2']=tag;
 
             check=(data[i]['auth'][2]==1)? "checked":"";
             tag='<input type=\"checkbox\" class=\"form-control mx-checkbox\" id=\"auth3_'+(i+1)+'\" '+check+' >';
@@ -119,19 +119,19 @@ function updatecell(data, type)
             check=(data[i]['auth'][3]==1)? "checked":"";
             tag='<input type=\"checkbox\" class=\"form-control mx-checkbox\" id=\"auth4_'+(i+1)+'\" '+check+' >';
             data[i]['auth4']=tag;
-            
+
             check=(data[i]['auth'][4]==1)? "checked":"";
             tag='<input type=\"checkbox\" class=\"form-control mx-checkbox\" id=\"auth5_'+(i+1)+'\" '+check+' >';
-            data[i]['auth5']=tag;            
-            
+            data[i]['auth5']=tag;
+
             check=(data[i]['auth'][5]==1)? "checked":"";
             tag='<input type=\"checkbox\" class=\"form-control mx-checkbox\" id=\"auth6_'+(i+1)+'\" '+check+' >';
             data[i]['auth6']=tag;
-            
+
             check=(data[i]['auth'][6]==1)? "checked":"";
             tag='<input type=\"checkbox\" class=\"form-control mx-checkbox\" id=\"auth7_'+(i+1)+'\" '+check+' >';
             data[i]['auth7']=tag;
-            
+
 
             tag='<button type=\"button\" class=\"btn btn-danger member\" id=\"member_'+(i+1)+'\" idx='+data[i]['idx']+'>儲存</button>';
             //tag='<div align=\"center\"><input type=\"button\"';
@@ -140,8 +140,8 @@ function updatecell(data, type)
             data[i]['save']=tag;
         }
     }
-    
-    
+
+
    for(i=0;i<data.length;i++)
    {
        idx=data[i]['id'];
@@ -151,13 +151,15 @@ function updatecell(data, type)
 
        if (data[i]['area']=='A'){data[i]['area']='北區';}
        else if (data[i]['area']=='A'){data[i]['areadesc']='北區';}
+       else if (data[i]['area']=='H'){data[i]['areadesc']='竹區';}
        else if (data[i]['area']=='B'){data[i]['areadesc']='中區';}
        else if (data[i]['area']=='C'){data[i]['areadesc']='雲嘉';}
-       else if (data[i]['area']=='D'){data[i]['areadesc']='園區';}       
+       else if (data[i]['area']=='D'){data[i]['areadesc']='園區';}
        else if (data[i]['area']=='E'){data[i]['areadesc']='南區';}
-       else if (data[i]['area']=='F'){data[i]['areadesc']='海外';}
+       else if (data[i]['area']=='F'){data[i]['areadesc']='高區';}
+       else if (data[i]['area']=='G'){data[i]['areadesc']='海外';}
        else{data[i]['areadesc']='?';}
-       
+
        //tag='<div align=\"center\"><input type=\"radio\"';
        //tag+='class=\"form-control mx-radio memberdata\" id=\"memberid_'+serial+'\" idx='+idx;
        //tag+=' serial='+serial+' /> </div>';

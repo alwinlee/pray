@@ -1,15 +1,15 @@
-﻿$(document).ready(function() 
+﻿$(document).ready(function()
 {
     $("#datestart").datepicker();
     $("#datestart").datepicker("option","dateFormat","yy-mm-dd");
     var yearstart=$('#yearstart').val();
     $("#datestart").val(yearstart);
-    
+
     $("#dateend").datepicker();
     $("#dateend").datepicker("option","dateFormat","yy-mm-dd");
     var yearend=$('#yearend').val();
     $("#dateend").val(yearend);
-    
+
     $('#basic-group').on('change', function () {
         var subgroup=$('#basic-group').val();
         if (subgroup>0){
@@ -26,7 +26,7 @@
         }else{
             $('#basic-subgroup').find('option').remove();
             $('#basic-subgroup').append('<option selected="selected" value=0>-</option>');
-        }        
+        }
     });
 
     $('#datagrid').hide();
@@ -47,11 +47,11 @@
             drawDataTable(columns,type);
         }else if (type==10||type==20){
             var columns=[{"sTitle": "項目","mData": "item","aTargets": [0]},
-                         {"sTitle": "統計值","mData": "value","aTargets": [1]}];        
+                         {"sTitle": "統計值","mData": "value","aTargets": [1]}];
             drawDataTable(columns,type);
         }
     });
-    
+
     $('#export').click(function(){
         var parameter="";
         var type=$('#exporttype').val();
@@ -78,19 +78,19 @@
         if (type==0){
             alert("未選取印製的項目!");
             // nothing
-            //$('<form action="../api/statistic/exportexcel.php" method="post">'+parameter+'</form>').appendTo('body').submit().remove();   
+            //$('<form action="../api/statistic/exportexcel.php" method="post">'+parameter+'</form>').appendTo('body').submit().remove();
         }else if (type==1){
             $('<form action="../api/invoice/print-clean.php" method="post">'+parameter+'</form>').appendTo('body').submit().remove();
         }else if (type==2){
             $('<form action="../api/invoice/print-register.php" method="post">'+parameter+'</form>').appendTo('body').submit().remove();
         }else if (type==3){
-            //$('<form action="../api/invoice/export-checkin-excel.php" method="post">'+parameter+'</form>').appendTo('body').submit().remove();  
+            //$('<form action="../api/invoice/export-checkin-excel.php" method="post">'+parameter+'</form>').appendTo('body').submit().remove();
         }
-              
+
     });
 });
 
-function drawDataTable(columns, type) 
+function drawDataTable(columns, type)
 {
     var oTable = $('#searchdata').html('<table id="datagrid" class="table table-striped table-bordered" cellspacing="0" width="100%"></table>').children('table').dataTable({
         "processing":true,
@@ -135,11 +135,11 @@ function retrieveData(sSource, aoData, fnCallback)
         if(aoData[i].name=="start"){start=aoData[i].value;}
         if(aoData[i].name=="length"){len=aoData[i].value;}
     }
-    
+
     var register=1;
     var url="../api/statistic/findMember.php";
     var type=$('#exporttype').val();
-    var groupkey=$('#groupkey').val();    
+    var groupkey=$('#groupkey').val();
     if (type==0||type==1){register=0;url="../api/statistic/findMember.php";}
     if (type==10){register=0;url="../api/statistic/calcStatistic.php";}
     if (type==20){register=0;url="../api/statistic/calcCheckinStatistic.php";}
@@ -155,7 +155,7 @@ function retrieveData(sSource, aoData, fnCallback)
 	  contentType : 'application/json; charset=utf-8',
         success:function(data){
             if (type==0||type==1){updatecell(data["data"],type);}
-            
+
             fnCallback(data);
         }
     });
@@ -172,18 +172,20 @@ function updatecell(data, type)
 
        if (data[i]['area']=='A'){data[i]['areadesc']='北區';}
        else if (data[i]['area']=='A'){data[i]['areadesc']='北區';}
+       else if (data[i]['area']=='H'){data[i]['areadesc']='竹區';}
        else if (data[i]['area']=='B'){data[i]['areadesc']='中區';}
        else if (data[i]['area']=='C'){data[i]['areadesc']='雲嘉';}
-       else if (data[i]['area']=='D'){data[i]['areadesc']='園區';}       
+       else if (data[i]['area']=='D'){data[i]['areadesc']='園區';}
        else if (data[i]['area']=='E'){data[i]['areadesc']='南區';}
-       else if (data[i]['area']=='F'){data[i]['areadesc']='海外';}
+       else if (data[i]['area']=='F'){data[i]['areadesc']='高區';}
+       else if (data[i]['area']=='G'){data[i]['areadesc']='海外';}
        else{data[i]['areadesc']='?';}
- 
+
        if (data[i]['classroom']==''||data[i]['classroomid']=='0000'){
            data[i]['classroomdesc']=data[i]['classother'];
        } else {
            data[i]['classroomdesc']=data[i]['classroom'];
-       } 
+       }
        //tag='<div align=\"center\"><input type=\"radio\"';
        //tag+='class=\"form-control mx-radio memberdata\" id=\"memberid_'+serial+'\" idx='+idx;
        //tag+=' serial='+serial+' /> </div>';

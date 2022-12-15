@@ -173,7 +173,7 @@ function updatecell(data, type) {
        else{data[i]['sexdesc']='女';}
 
        if (data[i]['area']=='A'){data[i]['areadesc']='北區';}
-       else if (data[i]['area']=='A'){data[i]['areadesc']='北區';}
+       else if (data[i]['area']=='H'){data[i]['areadesc']='竹區';}
        else if (data[i]['area']=='B'){data[i]['areadesc']='中區';}
        else if (data[i]['area']=='C'){data[i]['areadesc']='雲嘉';}
        else if (data[i]['area']=='D'){data[i]['areadesc']='園區';}
