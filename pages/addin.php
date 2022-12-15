@@ -141,8 +141,8 @@ $debug="NO";
     <script src="../resource/js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
     <script src="../resource/js/metisMenu.min.js"></script><!-- Metis Menu Plugin JavaScript -->
     <script src="../resource/js/ucamp.js"></script><!-- Custom Theme JavaScript -->
-    <script src="../resource/js/api.js?{6EA63D78-6795-4888-AC83-170B66D98842}"></script>
-    <script src="../resource/js/addin.js?{6EA63D78-6795-4888-AC83-170B66D98842}" type="text/javascript" charset="utf-8"></script>
+    <script src="../resource/js/api.js?{F43BAD84-E62B-494D-9A51-863AF3C77EFC}"></script>
+    <script src="../resource/js/addin.js?{F43BAD84-E62B-494D-9A51-863AF3C77EFC}" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>
