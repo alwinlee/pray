@@ -445,21 +445,13 @@ function showtable(serial, idx)
 
     var group='0';
     var subgroup=json['subgroup'];
-    if (json['group'] == '教育大組') {group='1';}
-    if (json['group'] == '庶務大組') {group='2';}
-    if (json['group'] == '總務大組') {group='3';}
-    if (json['group'] == '福田大組') {group='4';}
-    if (json['group'] == '廣供大組') {group='5';}
-    if (json['group'] == '餐飲大組') { group = '6'; }
-    if (json['group'] == '交通大組') { group = '7'; }
-    if (json['group'] == '多媒體影音') { group = '8'; }
-    if (json['group'] == '法務組') { group = '9'; }
-    if (json['group'] == '海外組') { group = '10'; }
-    if (json['group'] == '護戒組') { group = '11'; }
-    if (json['group'] == '師長飲食') { group = '12'; }
-    if (json['group'] == '觀音亭專區') { group = '13'; }
-    if (json['group'] == '光明燈專案') { group = '14'; }
-    if (json['group']=='大會') {group='20';}
+    if (json['group']=='大會') {group='1';}
+    if (json['group'] == '秘書大組') {group='2';}
+    if (json['group'] == '教育大組') {group='3';}
+    if (json['group'] == '庶總大組') {group='4';}
+    if (json['group'] == '交通大組') {group='5';}
+    if (json['group'] == '廣供大組') {group='6';}
+    if (json['group'] == '節目大組') { group = '7'; }
 
     $('#basic-group').val(group);
     $('#basic-group').val(group).change();
@@ -624,7 +616,7 @@ function inputdata(dup)
     name=$('#basic-name').val();
     tel=$('#basic-tel').val();
     sex=$('#basic-sex').val();
-    age=parseInt($('#basic-age').val()); //年齡
+    age=parseInt($('#basic-age').val() || 0); //年齡
     area=$('#basic-area').val();
     classarea=$('#basic-classarea').val();
     classroomid=$('#basic-clsarea').val()+$('#basic-clsyear').val()+$('#basic-clsserial').val()+$('#basic-clsid').val();
@@ -666,7 +658,7 @@ function inputdata(dup)
     livewhere="";
     liveroom="";
     type=$('#basic-type option:selected').val();//.text();//$('#basic-type').val();
-    notify=$('#basic-nofity').val();
+    notify=$('#basic-nofity').val() || 0;
     specialcase=$('#basic-specialcase').val();
     request=$('#basic-request').val();
     trafficgo=$('#basic-trafficgo').val();

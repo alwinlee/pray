@@ -164,8 +164,8 @@ if($menu!="YES"){
     <script src="../resource/js/jquery-2.1.4.min.js"></script><!-- jQuery -->
     <script src="../resource/js/bootstrap.min.js"></script><!-- Bootstrap Core JavaScript -->
     <script src="../resource/js/metisMenu.min.js"></script><!-- Metis Menu Plugin JavaScript -->
-    <script src="../resource/js/api.js?{F43BAD84-E62B-494D-9A51-863AF3C77EFC}"></script>
-    <script src="../resource/js/prevcheckin.js?{F43BAD84-E62B-494D-9A51-863AF3C77EFC}" type="text/javascript" charset="utf-8"></script>
+    <script src="../resource/js/api.js?{88117D89-1C96-4F5F-9959-1B7B7BEA3819}"></script>
+    <script src="../resource/js/prevcheckin.js?{88117D89-1C96-4F5F-9959-1B7B7BEA3819}" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>

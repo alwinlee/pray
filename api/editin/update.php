@@ -77,7 +77,7 @@
     if ($barcode!=""){$sql.=",`barcode`='".$barcode."'";}
     if ($jsonNew['tel']!=$jsonOri['tel']){$sql.=",`tel`='".$jsonNew['tel']."'";}
     if ($jsonNew['sex']!=$jsonOri['sex']){$sql.=",`sex`='".$jsonNew['sex']."'"; $bClearLiveroom=true;}
-    if ($jsonNew['age']!=$jsonOri['age']){$sql.=",`age`=".$jsonNew['age'];}
+    if ($jsonNew['age']!=$jsonOri['age']){$sql.=",`age`=".($jsonNew['age'] ? $jsonNew['age'] : "0");}
     if ($jsonNew['area']!=$jsonOri['area']){$sql.=",`area`='".$jsonNew['area']."'";}
     if ($jsonNew['classarea']!=$jsonOri['classarea']){$sql.=",`classarea`='".$jsonNew['classarea']."'";}
     if ($jsonNew['classroom']!=$jsonOri['classroom']){$sql.=",`classroom`='".$jsonNew['classroom']."'";}
@@ -115,7 +115,7 @@
 
     if ($jsonNew['liveroom']!=$jsonOri['liveroom']){$sql.=",`liveroom`='".$jsonNew['liveroom']."'";}
     if ($jsonNew['type']!=$jsonOri['type']){$sql.=",`type`='".$jsonNew['type']."'";}
-    if ($jsonNew['notify']!=$jsonOri['notify']){$sql.=",`notify`=".$jsonNew['notify'];}
+    if ($jsonNew['notify']!=$jsonOri['notify']){$sql.=",`notify`=".($jsonNew['notify'] ? $jsonNew['notify'] : "0");}
     if ($jsonNew['specialcase']!=$jsonOri['specialcase']){$sql.=",`specialcase`='".$jsonNew['specialcase']."'";}
     if ($jsonNew['request']!=$jsonOri['request']){$sql.=",`request`='".$jsonNew['request']."'";}
     if ($jsonNew['trafficgo']!=$jsonOri['trafficgo']){$sql.=",`trafficgo`='".$jsonNew['trafficgo']."'";}
