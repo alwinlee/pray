@@ -187,7 +187,7 @@
 */
     $filename = 'receipt-list.pdf';//$classid.
     if ($count == 1 && $stu_name) {
-      $filename = $stu_group.'-'.$stu_name.'-報到通知單.pdf';//$stu_group.'-'.str_replace('/', '', $stu_subgroup).'-'.$stu_name.'-報到通知單.pdf';//$classid.
+      $filename = '報到通知單.pdf'; // $stu_group.'-'.$stu_name.'-報到通知單.pdf';//$stu_group.'-'.str_replace('/', '', $stu_subgroup).'-'.$stu_name.'-報到通知單.pdf';//$classid.
     } else if ($stu_group && $stu_subgroup) {
       $filename = $stu_group.'-'.str_replace('/', '', $stu_subgroup).'-報到通知單.pdf';//$stu_group.'-'.$stu_subgroup."-報到通知單.pdf";
     }
