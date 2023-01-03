@@ -52,7 +52,7 @@
         $i++;
     }
 
-    $sql="SELECT COUNT(*) as count8, SUM(`checkin`) as `realcount8` FROM `".$tbname."` WHERE (join1+join2+join3+join4+join5+join6+join7+join8)=8 AND `invalidate`<=0";
+    $sql="SELECT COUNT(*) as count8, SUM(`checkin`) as `realcount8` FROM `".$tbname."` WHERE (join1+join2+join3+join4+join5+join6+join7+join8)=7 AND `invalidate`<=0";
     $record=mysql_query($sql);
     $row=mysql_fetch_array($record, MYSQL_ASSOC);
     $statistic[$i]["item"]="參加全程人數";
