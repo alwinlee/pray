@@ -156,8 +156,8 @@ if($menu!="YES"){
     <script src="../resource/dataTables/js/jquery.dataTables.min.js"></script><!-- Metis Menu Plugin JavaScript -->
 
     <script src="../resource/js/ucamp.js"></script><!-- Custom Theme JavaScript -->
-    <script src="../resource/js/api.js?{CEB87E65-C982-482A-8016-17D959F55212}" type="text/javascript" charset="utf-8"></script>
-    <script src="../resource/js/editin.js?{CEB87E65-C982-482A-8016-17D959F55212}" type="text/javascript" charset="utf-8"></script>
+    <script src="../resource/js/api.js?{51DDD4FB-D26B-4C7F-A56A-2129EEE72173}" type="text/javascript" charset="utf-8"></script>
+    <script src="../resource/js/editin.js?{51DDD4FB-D26B-4C7F-A56A-2129EEE72173}" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>

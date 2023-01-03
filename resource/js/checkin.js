@@ -133,13 +133,21 @@ function isBarcodex() {
     return bBarcode;
 }
 
-function isBarcode() {
+function isBarcode_2021() {
     var keyword = $('#keyword').val();
     if (keyword.length < 4) { return false; }
     keyword = keyword.substr(0, 4);
-
     var year = $('#checkin-year').val();
     return ((keyword == year) ? true : false);
+}
+
+function isBarcode() {
+    var keyword = $('#keyword').val();
+    if (keyword.length < 4) { return false; }
+    if (keyword.length >= 10) {
+        return true;
+    }
+    return false;
 }
 
 function hideModal() {

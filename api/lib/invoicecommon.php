@@ -53,20 +53,20 @@
         $student_info="<table border=\"0\">";
         $student_info.="<tr>";
         $student_info.="<td style=\"width:85px;height:30px;text-align:left;\"><h3>區別：</h3></td>";
-        $student_info.="<td style=\"width:120px;height:30px;text-align:left;text-decoration:underline;\"><h3>&nbsp;".$area."&nbsp;</h3></td>";
+        $student_info.="<td style=\"width:110px;height:30px;text-align:left;text-decoration:underline;\"><h3>&nbsp;".$area."&nbsp;</h3></td>";
         $student_info.="<td style=\"width:85px;height:30px;text-align:left;\"><h3>姓名：</h3></td>";
-        $student_info.="<td style=\"width:130px;height:30px;text-align:left;text-decoration:underline;\"><h3>&nbsp;".$name."&nbsp;</h3></td>";
-        $student_info.="<td style=\"width:80px;text-align:right;\"><h3>報到序號：</h3></td>";
-        $student_info.="<td style=\"width:180px;text-align:center;\" rowspan=\"2\"> <tcpdf method=\"write1DBarcode\" params=\"".$params."\" /> </td>";
+        $student_info.="<td style=\"width:150px;height:30px;text-align:left;text-decoration:underline;\"><h3>&nbsp;".$name."&nbsp;</h3></td>";
+        // $student_info.="<td style=\"width:80px;text-align:right;\"><h3>報到序號：</h3></td>";
+        $student_info.="<td style=\"width:250px;text-align:center;\" rowspan=\"2\"> <tcpdf method=\"write1DBarcode\" params=\"".$params."\" /> </td>";
         $student_info.="</tr>";
 
         $student_info.="<tr>";
         $student_info.="<td style=\"width:85px;height:30px;text-align:left;\"><h3>義工組別：</h3></td>";
-        $student_info.="<td style=\"width:120px;height:30px;text-align:left;text-decoration:underline;\"><h3>&nbsp;".$group."&nbsp;</h3></td>";
+        $student_info.="<td style=\"width:110px;height:30px;text-align:left;text-decoration:underline;\"><h3>&nbsp;".$group."&nbsp;</h3></td>";
         $student_info.="<td style=\"width:85px;height:30px;text-align:left;\"><h3>小組：</h3></td>";
-        $student_info.="<td style=\"width:130px;height:30px;text-align:left;text-decoration:underline;\"><h3>&nbsp;".$subgroup."&nbsp;</h3></td>";
-        $student_info.="<td style=\"width:80px;text-align:right;\"></td>";
-        $student_info.="<td style=\"width:140px;text-align:left;\"><h3></h3></td>";
+        $student_info.="<td style=\"width:150px;height:30px;text-align:left;text-decoration:underline;\"><h3>&nbsp;".$subgroup."&nbsp;</h3></td>";
+        // $student_info.="<td style=\"width:80px;text-align:right;\"></td>";
+        $student_info.="<td style=\"width:250px;text-align:left;\"><h3></h3></td>";
         $student_info.="</tr>";
         $student_info.="</table>";
         return $student_info;
@@ -183,7 +183,7 @@
     function getPDFinfo($year,$area,$notify,$group,$subgroup)
     {
         //$info="<style>span{ color: black; font-size: 14pt; text-decoration:underline; background-color:#E0E0E0;}</style>";
-        $info='<style>span{ color: black; font-size: 12pt;} span.hint{ color: black; font-size: 12pt;text-decoration:underline; background-color:#e0e0e0;}</style>';
+        $info='<style>span{ color: black; font-size: 13pt;} span.hint{ color: black; font-size: 13pt;text-decoration:underline; background-color:#e0e0e0;}</style>';
         $info.='<table border="0">';
 
         //$info.="<tr>";
@@ -202,7 +202,7 @@
 
         $info.='<tr style="height:3px;"><td style="height:3px;text-align:left;"></td><td></td></tr>';
 
-        $info.='<tr><td style="width:20px;text-align:left;">1.</td>';
+        $info.='<tr><td style="width:20px;text-align:left;"><span>1.</span></td>';
         $info.='<td style="width:660px;text-align:left;">';
         $info.='<span class="hint">報到時間：2023年2月3日(五)上午8:30~9:10，報到地點：覺燈樓前</span>';
         $info.='<span class="hint"><br>◆ 報到方式：提供手機號碼或名字，現場報到</span>';
@@ -211,7 +211,7 @@
 
         $info.='<tr><td></td><td></td></tr>';
 
-        $info.='<tr><td style="width:20px;text-align:left;">2.</td>';
+        $info.='<tr><td style="width:20px;text-align:left;"><span>2.</span></td>';
         $info.='<td style="width:660px;text-align:left;">';
         $info.='<span>義工每天都要報到，地點：覺燈樓前</span>';
         $info.='<span><br>2/4-2/5報到時間：7:30~8:30</span>';
@@ -221,7 +221,7 @@
 
         $info.='<tr><td></td><td></td></tr>';
 
-        $info.='<tr><td style="width:20px;text-align:left;">3.</td>';
+        $info.='<tr><td style="width:20px;text-align:left;"><span>3.</span></td>';
         $info.='<td style="width:660px;text-align:left;">';
         $info.='<span>攜帶物品：名牌、身份證、健保卡；住宿者請攜帶：個人盥洗用具、睡袋(勿攜帶貴重物品)</span>';
         $info.='<span><br>湖山早晚溫差大，且有小黑蚊，請注意保暖及防蚊</span>';
@@ -230,7 +230,7 @@
 
         $info.='<tr><td></td><td></td></tr>';
 
-        $info.='<tr><td style="width:20px;text-align:left;">4.</td>';
+        $info.='<tr><td style="width:20px;text-align:left;"><span>4.</span></td>';
         $info.='<td style="width:660px;text-align:left;">';
         $info.='<span>為維護自他，請全程配戴口罩</span>';
         $info.='</td>';
@@ -238,7 +238,7 @@
 
         $info.='<tr><td></td><td></td></tr>';
 
-        $info.='<tr><td style="width:20px;text-align:left;">5.</td>';
+        $info.='<tr><td style="width:20px;text-align:left;"><span>5.</span></td>';
         $info.='<td style="width:660px;text-align:left;">';
         $info.='<span>有問題請聯絡 報到組：劉晉欽0921-265-556</span>';
         $info.='</td>';
@@ -246,16 +246,16 @@
 
         $info.='<tr><td></td><td></td></tr>';
 
-        $info.='<tr><td style="width:20px;text-align:left;">6.</td>';
+        $info.='<tr><td style="width:20px;text-align:left;"><span>6.</span></td>';
         $info.='<td style="width:660px;text-align:left;">';
         $info.='<span>湖山停車空間有限，請盡量搭遊覽車或小車共乘，小車盡量坐滿</span>';
-        $info.='<span><br>小車請依交通組引導停車，通行證放置副駕車前擋風玻璃內</span>';
+        $info.='<span><br>小車請依交通組引導停車，通行證放置副駕前擋風玻璃內</span>';
         $info.='</td>';
         $info.='</tr>';
 
         $info.='<tr><td></td><td></td></tr>';
 
-        $info.='<tr><td style="width:20px;text-align:left;">7.</td>';
+        $info.='<tr><td style="width:20px;text-align:left;"><span>7.</span></td>';
         $info.='<td style="width:660px;text-align:left;">';
         $info.='<span>湖山地址：雲林縣斗六市岩山路88號</span>';
         $info.='</td>';
@@ -266,8 +266,8 @@
 
         $info.='<tr>';
         $info.='<td style="width:380px;text-align:right;">';
-        $info.='<h3>祝福您 福智圓滿！</h3></td>';
-        $info.='<td style="width:300px;text-align:right;"><br><br>祈願法會 報到生服組  合十  '.$year.'.01</td></tr>';
+        $info.='<span>祝福您 福智圓滿！</span></td>';
+        $info.='<td style="width:300px;text-align:right;"><br><br><span>祈願法會 報到生服組  合十  '.$year.'.01</span></td></tr>';
         $info.='</table>';
         return $info;
     }

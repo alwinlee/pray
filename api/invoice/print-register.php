@@ -156,7 +156,8 @@
 
         //$stu_barcode=$row["barcode"];
         $stu_barcode = str_replace("#", "X", $row["barcode"]);
-        $stu_barcode = $currY.$stu_barcode; //'2O2O'.$stu_barcode;
+        $stu_barcode = str_replace("#", "X", $row["tel"]);
+        // $stu_barcode = $currY.$stu_barcode; //'2O2O'.$stu_barcode;
         $stu_invoicewhere=$notify_array[$row["notify"]];
         $stu_sex=$sex_array[$row["sex"]];
         $params=$pdf->serializeTCPDFtagParameters(array($stu_barcode, 'C39', '', '', '', 16, 0.4, $barcodestyle, 'N'));
