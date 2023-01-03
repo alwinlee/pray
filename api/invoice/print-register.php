@@ -39,7 +39,7 @@
     $yearend=$_POST["yearend"];
 
     // page information
-    $table_title= $currY."年 園區祈願法會義工錄取暨報到通知單";
+    $table_title= $currY."年 祈願法會 義工報到通知單";
 
     // page setting
     $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
@@ -132,34 +132,41 @@
     $result=mysql_query($sql);
 
     $count=0;
+    $stu_name='';
+    $stu_group='';
+    $stu_subgroup='';
     while($row=mysql_fetch_array($result,MYSQL_ASSOC)) {
-        if ($count%2==0){
-            $pdf->AddPage();// add a page
-            $pdf->SetFont('droidsansfallback', '', 10);
-        }else{
-            //$pdf->writeHTML($html_line, true, false, false, false, '');
-            $pdf->writeHTML($spLine, true, false, false, false, '');
-        }
-
-        $info=getPDFinfo($currY,$row["area"],$row["notify"], $row["group"],$row["subgroup"]);
+        $pdf->AddPage();// add a page
+        $pdf->SetFont('droidsansfallback', '', 10);
+        // if ($count%2==0){
+        //     $pdf->AddPage();// add a page
+        //     $pdf->SetFont('droidsansfallback', '', 10);
+        // }else{
+        //     //$pdf->writeHTML($html_line, true, false, false, false, '');
+        //     $pdf->writeHTML($spLine, true, false, false, false, '');
+        // }
         $stu_area=$area_array[$row["area"]];
         $stu_clsarea=$row["classarea"];
         $stu_class=$row["classroom"];
         $stu_name=$row["name"];
+        $stu_group=$row["group"];
+        $stu_subgroup=$row["subgroup"];
+
+        $info=getPDFinfo($currY,$row["area"],$row["notify"], $row["group"],$row["subgroup"]);
+
         //$stu_barcode=$row["barcode"];
         $stu_barcode = str_replace("#", "X", $row["barcode"]);
         $stu_barcode = $currY.$stu_barcode; //'2O2O'.$stu_barcode;
         $stu_invoicewhere=$notify_array[$row["notify"]];
         $stu_sex=$sex_array[$row["sex"]];
         $params=$pdf->serializeTCPDFtagParameters(array($stu_barcode, 'C39', '', '', '', 16, 0.4, $barcodestyle, 'N'));
-        $student_info=getPDFstudent($stu_area,$stu_clsarea,$stu_class,$stu_name,$stu_invoicewhere,$stu_sex,$params);
+        $student_info=getPDFstudent($stu_area,$stu_clsarea,$stu_class,$stu_name,$stu_invoicewhere,$stu_sex,$stu_group,$stu_subgroup,$params);
 
         $pdf->writeHTML($invoice_title, true, false, false, false, '');
         $pdf->writeHTML($student_info, true, false, false, false, '');
         $pdf->writeHTML($info, true, false, false, false, '');
         $count++;
     }
-
 
 /*
     // ---------------------------------------------------------
@@ -178,11 +185,13 @@
     $pdf->writeHTML($student_info, true, false, false, false, '');
     $pdf->writeHTML($info, true, false, false, false, '');
 */
+    $filename = 'receipt-list.pdf';//$classid.
+    if ($count == 1 && $stu_name) {
+      $filename = $stu_group.'-'.str_replace('/', '', $stu_subgroup).'-'.$stu_name.'-報到通知單.pdf';//$classid.
+    } else if ($stu_group && $stu_subgroup) {
+      $filename = $stu_group.'-'.str_replace('/', '', $stu_subgroup).'-報到通知單.pdf';//$stu_group.'-'.$stu_subgroup."-報到通知單.pdf";
+    }
 
-
-
-
-    $filename = "receipt-list.pdf";//$classid.
     $pdf->Output($filename, 'D');
 
 	//============================================================+

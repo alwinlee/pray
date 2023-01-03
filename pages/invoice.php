@@ -138,18 +138,18 @@
                  <br><br>
                  <div class="row">
                  <div class="col-lg-2" align="center"></div>
-                     <div class="col-lg-8" align="center">
-                     <label style="font-size:16px;">通知單發放 ： </label>
-                     <select class="basic-nofity" id="basic-nofity">
-                         <option value=0>-</option>
-                         <option value=1>研討母班</option>
-                         <option value=2>各組組長</option>
-                         <option value=3>非研討母班</option>
-                     </select>
-                     &nbsp;&nbsp;&nbsp;
-                     <br>
-                     <label style="font-size:16px;">區別 ： </label>
-                     <select class="basic-area" id="basic-area">
+                    <div class="col-lg-8" align="center">
+                        <label style="font-size:16px;">通知單發放 ： </label>
+                        <select class="basic-nofity" id="basic-nofity">
+                            <option value=0>-</option>
+                            <option value=1>研討母班</option>
+                            <option value=2>各組組長</option>
+                            <option value=3>非研討母班</option>
+                        </select>
+                        &nbsp;&nbsp;&nbsp;
+                        <br>
+                        <label style="font-size:16px;">區別 ： </label>
+                        <select class="basic-area" id="basic-area">
                             <option value='0'>-</option>
                             <option value='A'>北區</option>
                             <option value='H'>竹區</option>
@@ -159,18 +159,18 @@
                             <option value='E'>南區</option>
                             <option value='F'>高區</option>
                             <option value='G'>海外</option>
-                     </select>
-                     <br>
-                     <label style="font-size:16px;">義工組別 ： </label>
-                     <select class="basic-group" id="basic-group">
-                            <option value=0>-</option>
-                            <option value=6>大會</option>
-                            <option value=1>秘書大組</option>
-                            <option value=2>教育大組</option>
-                            <option value=3>庶務大組</option>
-                            <option value=4>總務大組</option>
-                            <option value=5>善法實踐</option>
                         </select>
+                        <br>
+                        <label style="font-size:16px;">義工組別 ： </label>
+                        <select class="basic-group" id="basic-group">
+                            <option value=0>-</option>
+                            <?php
+                            for($i = 0; $i < count($params_maingroups); $i++) {
+                                echo '<option value='.($i+1).'>'.$params_maingroups[$i].'</option>';
+                            }
+                            ?>
+                        </select>
+
                         &nbsp;&nbsp;
                         <select class="basic-subgroup" id="basic-subgroup">
                             <option value=0>-</option>
@@ -181,7 +181,7 @@
                         <input style="width:200px;" id='datestart' class='datestart' type='text' value='2000-01-01'>
                         ～
                         <input style="width:200px;" id='dateend' class='dateend' type='text' value='2020-12-31'>
-                     </div>
+                    </div>
                  <div class="col-lg-2" align="center"></div>
                  </div>
 
@@ -233,8 +233,8 @@
     <script src="../resource/dataTables/js/jquery.dataTables.min.js"></script><!-- Metis Menu Plugin JavaScript -->
     <script src="../resource/js/ucamp.js"></script><!-- Custom Theme JavaScript -->
     <script src="../resource/js/jqueryui/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="../resource/js/api.js?{88117D89-1C96-4F5F-9959-1B7B7BEA3819}" type="text/javascript" charset="utf-8"></script>
-    <script src="../resource/js/invoice.js?{88117D89-1C96-4F5F-9959-1B7B7BEA3819}" type="text/javascript" charset="utf-8"></script>
+    <script src="../resource/js/api.js?{CEB87E65-C982-482A-8016-17D959F55212}" type="text/javascript" charset="utf-8"></script>
+    <script src="../resource/js/invoice.js?{CEB87E65-C982-482A-8016-17D959F55212}" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>

@@ -3,6 +3,7 @@ session_start();
 if(isset($_SESSION["account"])==false||$_SESSION["account"]==""||isset($_SESSION["auth"])==false||$_SESSION["area"]!="pray"){
     header("Location: ../index.php");
 }
+
 // check auth
 date_default_timezone_set('Asia/Taipei');
 $expire_date=$_SESSION["expireday"];
@@ -72,7 +73,7 @@ if($menu!="YES"){
     <div id="wrapper">
         <!-- Navigation -->
         <?php include("menu.php"); ?>
-        <div id="bPrintNotice" data-status="0"></div>
+        <div id="bPrintNotice" data-status="1"></div>
         <!-- Page Content -->
         <div id="page-wrapper" style="background-image: url('../resource/img/back.png');">
             <div class="container-fluid">
@@ -155,8 +156,8 @@ if($menu!="YES"){
     <script src="../resource/dataTables/js/jquery.dataTables.min.js"></script><!-- Metis Menu Plugin JavaScript -->
 
     <script src="../resource/js/ucamp.js"></script><!-- Custom Theme JavaScript -->
-    <script src="../resource/js/api.js?{88117D89-1C96-4F5F-9959-1B7B7BEA3819}"></script>
-    <script src="../resource/js/editin.js?{88117D89-1C96-4F5F-9959-1B7B7BEA3819}" type="text/javascript" charset="utf-8"></script>
+    <script src="../resource/js/api.js?{CEB87E65-C982-482A-8016-17D959F55212}" type="text/javascript" charset="utf-8"></script>
+    <script src="../resource/js/editin.js?{CEB87E65-C982-482A-8016-17D959F55212}" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>

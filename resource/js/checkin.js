@@ -64,7 +64,7 @@ function searchMember() {
     $('#previous-keyword').val(keyword);
 
     var year = $('#checkin-year').val();
-    keyword = keyword.replace(/year/g, '');
+    keyword = keyword.replace(year, ''); // keyword.replace(/year/g, '');
 
     pray.query.findCheckinMember(keyword, function(data){
         if(data['code']<=0){
@@ -73,9 +73,9 @@ function searchMember() {
             var bBarcode = isBarcode();
             if (bBarcode) {
                 var keyword = $('#keyword').val();
-                keyword = keyword.replace(/X/g, '#');
+                keyword = keyword.replace('X', '#'); // keyword.replace(/X/g, '#');
                 var year = $('#checkin-year').val();
-                keyword = keyword.replace(/year/g, '');
+                keyword = keyword.replace(year, '');
                 $('#keyword').val(keyword);
             }
 

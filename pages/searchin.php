@@ -15,6 +15,7 @@ if (strtotime($today_date) > strtotime($expire_date)){
     //echo strtotime($today_date)." - today <br>";
     //echo strtotime($expire_date)." - expire <br>";
 }
+
 require_once("../api/lib/params.php");
 require_once("../api/lib/common.php");
 $auth=$_SESSION["auth"];
@@ -67,7 +68,7 @@ if($menu!="YES"){
     <div id="wrapper">
         <!-- Navigation -->
         <?php include("menu.php"); ?>
-        <div id="bPrintNotice" data-status="0"></div>
+        <div id="bPrintNotice" data-status="1"></div>
         <!-- Page Content -->
         <div id="page-wrapper" style="background-image: url('../resource/img/back.png');">
             <div class="container-fluid">
@@ -97,14 +98,14 @@ if($menu!="YES"){
                 <div class="row">
                     <div class="col-lg-1" align="center"> </div>
                     <div class="col-lg-10" align="center" id="searchdata">
-                    <table id="datagrid" class="table table-striped table-bordered" cellspacing="0" width="100%" style="display:none;" disabled>
-                        <thead>
-                            <th>選取</th>
-                            <th>姓名</th>
-                            <th>電話</th>
-                            <th>母班班級</th>
-                        </thead>
-                    </table>
+                        <table id="datagrid" class="table table-striped table-bordered" cellspacing="0" width="100%" style="display:none;" disabled>
+                            <thead>
+                                <th>選取</th>
+                                <th>姓名</th>
+                                <th>電話</th>
+                                <th>母班班級</th>
+                            </thead>
+                        </table>
                     </div>
                     <div class="col-lg-1" align="center"> </div>
                 </div>
@@ -138,8 +139,8 @@ if($menu!="YES"){
     <script src="../resource/dataTables/js/jquery.dataTables.min.js"></script><!-- Metis Menu Plugin JavaScript -->
 
     <script src="../resource/js/ucamp.js"></script><!-- Custom Theme JavaScript -->
-    <script src="../resource/js/api.js?{88117D89-1C96-4F5F-9959-1B7B7BEA3819}"></script>
-    <script src="../resource/js/searchin.js?{88117D89-1C96-4F5F-9959-1B7B7BEA3819}" type="text/javascript" charset="utf-8"></script>
+    <script src="../resource/js/api.js?{CEB87E65-C982-482A-8016-17D959F55212}" type="text/javascript" charset="utf-8"></script>
+    <script src="../resource/js/searchin.js?{CEB87E65-C982-482A-8016-17D959F55212}" type="text/javascript" charset="utf-8"></script>
 </body>
 
 </html>

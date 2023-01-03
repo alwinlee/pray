@@ -149,8 +149,8 @@ function searchmember()
                  ,{"sTitle": "義工大組","mData": "group","aTargets": [7]}
                  ,{"sTitle": "義工小組","mData": "subgroup","aTargets": [8]}
                  ,{"sTitle": "刪除","mData": "remove","aTargets": [9]}
-                 ,{"sTitle": "打掃報到單","mData": "cleaninvoice","aTargets": [10]}
-                 ,{"sTitle": "正行報到單","mData": "invoice","aTargets": [11]}
+                 ,{"sTitle": "-","mData": "cleaninvoice","aTargets": [10]}
+                 ,{"sTitle": "報到單","mData": "invoice","aTargets": [11]}
                  ];
     drawDataTable(columns,type);
 }

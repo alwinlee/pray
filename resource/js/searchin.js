@@ -1,4 +1,4 @@
-﻿$(document).ready(function() {
+$(document).ready(function() {
     $('#basic-clsserialex').find('option').remove();
     $('#basic-clsserialex').append('<option selected="selected" value=0>-</option>');
     var clsotheritem = $('#clsother').val();
@@ -32,6 +32,13 @@
     $('#editinsearch').click(function(){
         searchmember();
     });
+
+    $('#searchdata').on('click', '.invoice_memberdata', function (e) {
+        var idx=$(this).attr('idx');
+        var parameter="";
+        parameter+='<input type="hidden" name="idx" value="'+idx+'" />"';
+        $('<form action="../api/invoice/print-register.php" method="post">'+parameter+'</form>').appendTo('body').submit().remove();
+    });
 });
 
 function searchmember()
@@ -52,8 +59,8 @@ function searchmember()
                  ,{"sTitle": "義工大組","mData": "group","aTargets": [7]}
                  ,{"sTitle": "義工小組","mData": "subgroup","aTargets": [8]}
                  ,{"sTitle": "住宿","mData": "livewhere","aTargets": [9]}
-                 ,{"sTitle": "打掃報到單","mData": "cleaninvoice","aTargets": [10]}
-                 ,{"sTitle": "正行報到單","mData": "invoice","aTargets": [11]}
+                 ,{"sTitle": "-","mData": "cleaninvoice","aTargets": [10]}
+                 ,{"sTitle": "報到單","mData": "invoice","aTargets": [11]}
                  ];
     drawDataTable(columns,type);
 }
@@ -165,12 +172,12 @@ function retrieveData(sSource, aoData, fnCallback)
                 $('<form action="../api/invoice/print-clean.php" method="post">'+parameter+'</form>').appendTo('body').submit().remove();
             });
 
-            $('.invoice_memberdata').click(function(){
-                var idx=$(this).attr('idx');
-                var parameter="";
-                parameter+='<input type="hidden" name="idx" value="'+idx+'" />"';
-                $('<form action="../api/invoice/print-register.php" method="post">'+parameter+'</form>').appendTo('body').submit().remove();
-            });
+            // $('.invoice_memberdata').click(function(){
+            //     var idx=$(this).attr('idx');
+            //     var parameter="";
+            //     parameter+='<input type="hidden" name="idx" value="'+idx+'" />"';
+            //     $('<form action="../api/invoice/print-register.php" method="post">'+parameter+'</form>').appendTo('body').submit().remove();
+            // });
 
             $('.memberdata').click(function(){
                 //isChecked=$(this).is(':checked');
