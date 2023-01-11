@@ -29,7 +29,7 @@
     $keyword = $data['keyword'];
 
     //查詢登入會員資料
-    $sql="select * from ".$tbname." where (`barcode` LIKE '%".$keyword."%' OR `name` LIKE '%".$keyword."%') order by `id`";
+    $sql="select * from ".$tbname." where (`barcode` LIKE '%".$keyword."%' OR `name` LIKE '%".$keyword."%') AND (`invalidate` = 0) order by `id`";
     $record=mysql_query($sql);
     $numrows=mysql_num_rows($record);
     if($numrows<=0){
